@@ -10,11 +10,12 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-col sm:items-end gap-3 text-sm text-[var(--ink-muted)]">
-          <div className="flex gap-5">
-            <a href="#processo"  className="hover:text-[var(--ink)] transition-colors">Como trabalhamos</a>
-            <a href="#servicos"  className="hover:text-[var(--ink)] transition-colors">Serviços</a>
-            <a href="#solucoes"  className="hover:text-[var(--ink)] transition-colors">Soluções</a>
-            <a href="#contato"   className="hover:text-[var(--ink)] transition-colors">Contato</a>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 sm:justify-end">
+            <a href="#processo" className="hover:text-[var(--ink)] transition-colors">Como trabalhamos</a>
+            <a href="#modular"  className="hover:text-[var(--ink)] transition-colors">Modular</a>
+            <a href="#servicos" className="hover:text-[var(--ink)] transition-colors">Serviços</a>
+            <a href="#solucoes" className="hover:text-[var(--ink)] transition-colors">Soluções</a>
+            <a href="#contato"  className="hover:text-[var(--ink)] transition-colors">Contato</a>
           </div>
           <div className="mono text-[11px] tracking-[0.16em] text-[var(--ink-faint)] uppercase">
             © {year} A3 Soluções — feito no Brasil

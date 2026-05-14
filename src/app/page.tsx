@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { Process } from "@/components/sections/Process";
+import { Modular } from "@/components/sections/Modular";
 import { Services } from "@/components/sections/Services";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Industries } from "@/components/sections/Industries";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <WhoWeAre />
       <Process />
+      <Modular />
       <Services />
       <BeforeAfter />
       <Industries />
