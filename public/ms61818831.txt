@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "3asolucoes.com.br",
+  "Id": "c9d5a748-8220-4358-9b13-7fcd2b9236e3"
+}
