@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { gloss } from "@/components/gloss";
 
 const ROWS = [
   {
@@ -26,6 +27,7 @@ const ROWS = [
 ];
 
 export function BeforeAfter() {
+  const seen = new Set<string>();
   return (
     <section className="section">
       <div className="shell">
@@ -52,7 +54,7 @@ export function BeforeAfter() {
           </div>
 
           {ROWS.map((r, i) => (
-            <ComparisonRow key={i} before={r.before} after={r.after} index={i} />
+            <ComparisonRow key={i} before={gloss(r.before, seen)} after={gloss(r.after, seen)} index={i} />
           ))}
         </div>
       </div>
@@ -60,7 +62,7 @@ export function BeforeAfter() {
   );
 }
 
-function ComparisonRow({ before, after, index }: { before: string; after: string; index: number }) {
+function ComparisonRow({ before, after, index }: { before: React.ReactNode; after: React.ReactNode; index: number }) {
   return (
     <>
       <motion.div

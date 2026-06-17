@@ -15,14 +15,14 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "A3 Soluções — Tecnologia trabalhando para você",
+  title: "Rubix360 — Transformando Complexidade em Inteligência",
   description:
-    "Software sob medida, IA, automação, cloud e produtos SaaS desenvolvidos junto com a sua empresa. Aceleramos crescimento, eficiência e inovação.",
-  metadataBase: new URL("https://a3solucoes.com"),
+    "Conectamos sistemas, processos, pessoas e inteligência artificial em um único ecossistema. Software sob medida, IA, automação, cloud e produtos SaaS desenvolvidos junto com a sua empresa.",
+  metadataBase: new URL("https://rubix360.com.br"),
   openGraph: {
-    title: "A3 Soluções — Tecnologia trabalhando para você",
+    title: "Rubix360 — Transformando Complexidade em Inteligência",
     description:
-      "Desenvolvemos software, IA e automação junto com sua empresa, não para ela.",
+      "Conectamos os sistemas da sua empresa em uma única visão. Software, IA e automação desenvolvidos junto com você, não para você.",
     type: "website",
     locale: "pt_BR",
   },

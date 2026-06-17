@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const NAV = [
@@ -23,16 +24,16 @@ export function TopNav() {
 
   return (
     <header className={`sticky top-0 z-40 transition-shadow ${scrolled ? "glass shadow-[0_1px_0_var(--hairline)]" : ""}`}>
-      <div className="shell flex items-center justify-between h-16">
+      <div className="shell flex items-center justify-between h-20 sm:h-24">
         <motion.a
           href="#top"
+          aria-label="Rubix360 — início"
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
-          className="flex items-center gap-2 font-display text-lg tracking-tight"
+          className="flex items-center"
         >
           <Logo />
-          <span>A3 Soluções</span>
         </motion.a>
 
         <nav className="hidden md:flex items-center gap-1">
@@ -66,20 +67,15 @@ export function TopNav() {
 }
 
 function Logo() {
-  // Subtle "A3" mark — three stacked bars in a circular outline. Pure SVG,
-  // scales with text. Cobalt → cyan gradient hints at the brand colours.
+  // Official Rubix360 lockup (transparent PNG in /public).
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden>
-      <defs>
-        <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="var(--cobalt-deep)" />
-          <stop offset="100%" stopColor="var(--cyan)" />
-        </linearGradient>
-      </defs>
-      <circle cx="14" cy="14" r="13" fill="none" stroke="url(#logo-grad)" strokeWidth="1.6" />
-      <rect x="8"  y="9"  width="12" height="2"   rx="1" fill="url(#logo-grad)" />
-      <rect x="8"  y="13" width="9"  height="2"   rx="1" fill="var(--ink)" />
-      <rect x="8"  y="17" width="12" height="2"   rx="1" fill="url(#logo-grad)" />
-    </svg>
+    <Image
+      src="/rubix360-logo.png"
+      alt="Rubix360"
+      width={1040}
+      height={988}
+      priority
+      className="h-14 w-auto sm:h-16"
+    />
   );
 }

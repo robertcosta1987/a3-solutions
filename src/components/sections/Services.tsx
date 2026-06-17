@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { gloss } from "@/components/gloss";
 
 const SERVICES = [
   {
@@ -46,6 +47,7 @@ const SERVICES = [
 ];
 
 export function Services() {
+  const seen = new Set<string>();
   return (
     <section id="servicos" className="section">
       <div className="shell">
@@ -76,13 +78,13 @@ export function Services() {
                 <span className="mono text-[11px] tracking-widest text-[var(--ink-faint)]">{String(i + 1).padStart(2, "0")} / 08</span>
                 <Dot index={i} />
               </div>
-              <h3 className="font-display text-[20px] tracking-[-0.012em] text-[var(--ink-strong)]">{s.title}</h3>
-              <p className="mt-3 text-[14px] text-[var(--ink-muted)] leading-relaxed">{s.summary}</p>
+              <h3 className="font-display text-[20px] tracking-[-0.012em] text-[var(--ink-strong)]">{gloss(s.title, seen)}</h3>
+              <p className="mt-3 text-[14px] text-[var(--ink-muted)] leading-relaxed">{gloss(s.summary, seen)}</p>
               <ul className="mt-4 space-y-1.5 text-[13px] text-[var(--ink)]">
                 {s.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2">
                     <Check />
-                    <span>{b}</span>
+                    <span>{gloss(b, seen)}</span>
                   </li>
                 ))}
               </ul>

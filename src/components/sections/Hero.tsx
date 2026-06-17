@@ -17,7 +17,7 @@ export function Hero() {
 
       <div className="shell relative pt-24 pb-28 sm:pt-32 sm:pb-36">
         <motion.div {...FADE_UP(0)} className="flex items-center justify-center">
-          <span className="eyebrow">Tecnologia trabalhando para você</span>
+          <span className="eyebrow">Transformando Complexidade em Inteligência</span>
         </motion.div>
 
         <motion.h1

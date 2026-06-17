@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { gloss } from "@/components/gloss";
 
 const STEPS = [
   { kicker: "01", title: "Descobrir",  body: "Entrevistas com lideranças, operadores e clientes finais. Mapa do que importa de fato — antes de qualquer slide de proposta." },
@@ -12,6 +13,7 @@ const STEPS = [
 ];
 
 export function Process() {
+  const seen = new Set<string>();
   return (
     <section id="processo" className="section section-soft relative">
       <div className="shell">
@@ -41,7 +43,7 @@ export function Process() {
                 <Connector />
               </div>
               <h3 className="font-display mt-4 text-[26px] tracking-[-0.015em] text-[var(--ink-strong)]">{s.title}</h3>
-              <p className="mt-2 text-[14.5px] text-[var(--ink-muted)] leading-relaxed">{s.body}</p>
+              <p className="mt-2 text-[14.5px] text-[var(--ink-muted)] leading-relaxed">{gloss(s.body, seen)}</p>
             </motion.div>
           ))}
         </div>

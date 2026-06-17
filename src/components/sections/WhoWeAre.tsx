@@ -19,7 +19,7 @@ export function WhoWeAre() {
             Trabalhamos <span className="text-gradient-cool">com</span> você.
           </h2>
           <p className="mt-6 text-[17px] text-[var(--ink-muted)] leading-relaxed">
-            A A3 Soluções é uma empresa de tecnologia que se posiciona como parceira estratégica das organizações que atende. Cada projeto começa imerso no contexto do cliente: regras de negócio, fluxos operacionais, métricas e ambições.
+            A Rubix360 é uma empresa de tecnologia que se posiciona como parceira estratégica das organizações que atende. Cada projeto começa imerso no contexto do cliente: regras de negócio, fluxos operacionais, métricas e ambições.
           </p>
           <p className="mt-4 text-[17px] text-[var(--ink-muted)] leading-relaxed">
             Construímos sistemas, automações e produtos digitais que entendem o negócio antes de escrever a primeira linha de código — e que continuam evoluindo depois do lançamento.

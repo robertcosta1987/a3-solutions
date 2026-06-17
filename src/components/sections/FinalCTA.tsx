@@ -41,7 +41,7 @@ export function FinalCTA() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:contato@a3solucoes.com?subject=Vamos%20construir%20juntos"
+              href="mailto:contato@rubix360.com.br?subject=Vamos%20construir%20juntos"
               className="btn btn-primary"
               style={{ background: "#fff", color: "var(--ink-strong)", boxShadow: "0 6px 22px -8px rgba(0,0,0,0.35)" }}
             >
@@ -57,7 +57,7 @@ export function FinalCTA() {
             </a>
           </div>
           <p className="mt-8 text-xs uppercase tracking-[0.18em] text-white/65 mono">
-            contato@a3solucoes.com
+            contato@rubix360.com.br
           </p>
         </motion.div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { gloss } from "@/components/gloss";
 
 const SOLUTIONS = [
   {
@@ -30,6 +31,7 @@ const SOLUTIONS = [
 ];
 
 export function Solutions() {
+  const seen = new Set<string>();
   return (
     <section id="solucoes" className="section">
       <div className="shell">
@@ -66,7 +68,7 @@ export function Solutions() {
                   />
                 </div>
                 <h3 className="font-display mt-4 text-[24px] tracking-[-0.014em] text-[var(--ink-strong)] leading-tight">{s.title}</h3>
-                <p className="mt-3 text-[14.5px] text-[var(--ink-muted)] leading-relaxed">{s.body}</p>
+                <p className="mt-3 text-[14.5px] text-[var(--ink-muted)] leading-relaxed">{gloss(s.body, seen)}</p>
                 <ul className="mt-5 space-y-2 text-[13.5px] text-[var(--ink)]">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
@@ -74,7 +76,7 @@ export function Solutions() {
                         className="mt-2 inline-block w-1.5 h-1.5 rounded-full shrink-0"
                         style={{ background: s.accent }}
                       />
-                      <span>{b}</span>
+                      <span>{gloss(b, seen)}</span>
                     </li>
                   ))}
                 </ul>
