@@ -31,7 +31,7 @@ const PRODUCTS: Product[] = [
   {
     name: "Assistente Virtual 360",
     tag: "Atendente de IA white-label no WhatsApp (voz e texto)",
-    status: "Em operação · site em breve",
+    status: "No ar",
     what:
       "Assistente virtual white-label que conversa por texto e por áudio no WhatsApp, conhece o catálogo e os dados do seu negócio e responde com precisão — preços, estoque, condições, localização. Ela qualifica o interesse do cliente e encaminha o lead pronto para o time de vendas, 24 horas por dia, com a sua marca.",
     help: [
@@ -40,7 +40,7 @@ const PRODUCTS: Product[] = [
       "Mais retenção de leads: nenhum contato fica sem resposta — o lead chega ao vendedor já aquecido",
       "100% white-label: sua marca, sua voz, com planos e limites definidos por cliente",
     ],
-    cta: { label: "Falar com especialistas", href: "#contato" },
+    cta: { label: "Acessar assistente360.com.br", href: "https://www.assistente360.com.br", external: true },
     accent: "var(--cyan)",
   },
 ];
