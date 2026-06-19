@@ -11,6 +11,7 @@ const NAV = [
   { href: "#servicos",  label: "Serviços" },
   { href: "#industrias", label: "Indústrias" },
   { href: "#solucoes",  label: "Soluções" },
+  { href: "#produtos",  label: "Produtos 360" },
 ];
 
 export function TopNav() {

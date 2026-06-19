@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/Services";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Industries } from "@/components/sections/Industries";
 import { Solutions } from "@/components/sections/Solutions";
+import { Products360 } from "@/components/sections/Products360";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <BeforeAfter />
       <Industries />
       <Solutions />
+      <Products360 />
       <FinalCTA />
     </>
   );
