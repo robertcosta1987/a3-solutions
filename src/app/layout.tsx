@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TopNav } from "@/components/TopNav";
@@ -45,6 +46,21 @@ export default function RootLayout({
         <TopNav />
         {children}
         <Footer />
+        {/* Assistente 360 — widget de atendimento (tenant demo-voz no bot de DEV) */}
+        <Script id="assistente360-widget" strategy="afterInteractive">{`
+  window.A360_WIDGET_API = "https://lisa-voice-bot-dev.politemoss-82c39fb3.brazilsouth.azurecontainerapps.io";
+  (function (d) {
+    var s = d.createElement('script');
+    s.src = 'https://assistente360.com.br/widget.js';
+    s.async = true;
+    s.setAttribute('data-tenant', "demo-voz");
+    s.setAttribute('data-name', "Demo Voz (Resemble)");
+    s.setAttribute('data-color', "#0a4eff");
+    s.setAttribute('data-position', "bottom-right");
+    s.setAttribute('data-greeting', "Olá! Aqui eh o Robert, to time de Engenharia da Rubix. Como posso ajudar?");
+    d.body.appendChild(s);
+  })(document);
+`}</Script>
       </body>
     </html>
   );
