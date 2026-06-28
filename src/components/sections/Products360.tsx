@@ -43,6 +43,21 @@ const PRODUCTS: Product[] = [
     cta: { label: "Acessar assistente360.com.br", href: "https://www.assistente360.com.br", external: true },
     accent: "var(--cyan)",
   },
+  {
+    name: "CRM 360",
+    tag: "Funil de vendas e follow-up — a frente comercial do 360",
+    status: "No ar",
+    what:
+      "O CRM que recebe automaticamente cada lead qualificado pela Assistente Virtual 360, organiza no funil (Kanban), distribui para o vendedor certo, agenda o retorno e cobra o follow-up até virar venda. Quando há ERP, fecha o ciclo do primeiro \"oi\" no WhatsApp à venda registrada — para que nenhum lead esfrie na caixa de entrada.",
+    help: [
+      "Mais conversão: o lead captado pela Assistente é trabalhado e cobrado até fechar",
+      "Visão total: quantos leads entraram, quanto virou venda e qual vendedor converte mais",
+      "Distribuição e lembretes automáticos — ninguém esquece um retorno",
+      "Combos 360: Assistente + CRM no mesmo pacote, com desconto frente à contratação separada",
+    ],
+    cta: { label: "Ver os Combos 360 (Assistente + CRM)", href: "https://assistente360.com.br/#combos", external: true },
+    accent: "var(--mint)",
+  },
 ];
 
 export function Products360() {
@@ -80,7 +95,7 @@ export function Products360() {
                   <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: p.accent }} aria-hidden />
                   {p.status}
                 </span>
-                <span className="mono text-[11px] tracking-widest text-[var(--ink-faint)]">{String(i + 1).padStart(2, "0")} / 02</span>
+                <span className="mono text-[11px] tracking-widest text-[var(--ink-faint)]">{String(i + 1).padStart(2, "0")} / {String(PRODUCTS.length).padStart(2, "0")}</span>
               </div>
 
               <h3 className="font-display mt-5 text-[26px] sm:text-[30px] tracking-[-0.018em] text-[var(--ink-strong)]">{p.name}</h3>
