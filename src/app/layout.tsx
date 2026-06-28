@@ -15,18 +15,50 @@ const mono = Geist_Mono({
   display: "swap",
 });
 
+const SITE_URL = "https://www.rubix360.com.br";
+const BRAND = "Rubix360";
+const TITLE = "Rubix360 — Transformando Complexidade em Inteligência";
+const DESCRIPTION =
+  "Conectamos sistemas, processos, pessoas e inteligência artificial em um único ecossistema. Software sob medida, IA, automação, cloud e produtos SaaS desenvolvidos junto com a sua empresa.";
+
 export const metadata: Metadata = {
-  title: "Rubix360 — Transformando Complexidade em Inteligência",
-  description:
-    "Conectamos sistemas, processos, pessoas e inteligência artificial em um único ecossistema. Software sob medida, IA, automação, cloud e produtos SaaS desenvolvidos junto com a sua empresa.",
-  metadataBase: new URL("https://rubix360.com.br"),
+  metadataBase: new URL(SITE_URL),
+  title: { default: TITLE, template: `%s · ${BRAND}` },
+  description: DESCRIPTION,
+  applicationName: BRAND,
+  robots: {
+    index: true, follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Rubix360 — Transformando Complexidade em Inteligência",
+    title: TITLE,
     description:
       "Conectamos os sistemas da sua empresa em uma única visão. Software, IA e automação desenvolvidos junto com você, não para você.",
+    url: "/",
+    siteName: BRAND,
     type: "website",
     locale: "pt_BR",
   },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  ...(process.env.GOOGLE_SITE_VERIFICATION ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } } : {}),
+};
+
+// Structured data: Organization + WebSite + Service (software house B2B).
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: BRAND, url: SITE_URL, logo: `${SITE_URL}/apple-icon`, description: DESCRIPTION },
+    { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: BRAND, url: SITE_URL, description: DESCRIPTION, inLanguage: "pt-BR", publisher: { "@id": `${SITE_URL}/#organization` } },
+    {
+      "@type": "Service",
+      name: "Desenvolvimento de software, IA e automação",
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: { "@type": "Country", name: "Brasil" },
+      serviceType: ["Software sob medida", "Inteligência artificial", "Automação", "Cloud", "Produtos SaaS"],
+      description: DESCRIPTION,
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -43,6 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full bg-[var(--bg)] text-[var(--ink)]">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
         <TopNav />
         {children}
         <Footer />
