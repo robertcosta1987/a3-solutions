@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const FADE_UP = (delay = 0) => ({
@@ -45,9 +46,28 @@ export function Hero() {
           </a>
         </motion.div>
 
+        {/* Modular glass shot high-key on white. The plate is composited with
+            multiply, not dropped in as a rectangle: this hero is not actually
+            white — hero-mesh tints it — so an opaque white frame would show its
+            edges. Multiply lets the photo's white read as nothing and keeps the
+            glass and its shadows. Decorative: the h1 already carries the
+            meaning, so a described alt would only repeat it out loud. */}
+        <motion.div {...FADE_UP(0.32)} className="mt-14 sm:mt-16">
+          <Image
+            src="/hero-pecas.webp"
+            alt=""
+            aria-hidden
+            width={2200}
+            height={943}
+            priority
+            sizes="(max-width: 1024px) 100vw, 1080px"
+            className="mx-auto w-full max-w-[1080px] h-auto mix-blend-multiply"
+          />
+        </motion.div>
+
         <motion.div
-          {...FADE_UP(0.36)}
-          className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto"
+          {...FADE_UP(0.42)}
+          className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto"
         >
           {[
             { value: "20+", label: "anos de experiência combinada" },
