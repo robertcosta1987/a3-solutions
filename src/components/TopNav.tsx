@@ -68,15 +68,43 @@ export function TopNav() {
 }
 
 function Logo() {
-  // Official Rubix360 lockup (transparent PNG in /public).
+  // Horizontal lockup: generated mark + wordmark set in live type.
+  //
+  // The previous logo was a square emblem — cube, cloud, four icon badges and a
+  // chrome-bevelled wordmark — scaled to fit an 80px bar. A square lockup is
+  // capped by the bar's height, so everything inside it, the name included,
+  // collapsed to a smear. Splitting it horizontally lets the mark breathe and
+  // frees the name to be set at a size people can actually read.
+  //
+  // The name is TEXT, not part of the image, and that is the whole point: it
+  // stays crisp at every size and zoom, recolours with the theme, costs no
+  // bytes, and is selectable. Letterforms baked into a raster are the first
+  // thing to fall apart — which is exactly what went wrong here before.
+  // Abaixo de 390px sobra só o símbolo. Não é preferência: nessa largura a
+  // barra guarda o botão de contato (171px) mais o respiro do shell, e o que
+  // resta não comporta a palavra em corpo legível — espremê-la reproduziria
+  // exatamente o problema que este lockup veio resolver. O símbolo sozinho é
+  // logotipo legítimo, e o nome da empresa continua no <title> e no h1.
+  //
+  // O botão fica onde está de propósito, ainda que o código o declare
+  // `hidden sm:inline-flex`: `.btn` está definida fora das camadas do Tailwind
+  // em globals.css, e regra sem camada vence regra em camada — então o
+  // `hidden` nunca teve efeito. No celular o menu está oculto, então esse botão
+  // é a única navegação da barra; fazê-lo sumir deixaria o topo sem saída.
   return (
-    <Image
-      src="/rubix360-logo.png"
-      alt="Rubix360"
-      width={1040}
-      height={988}
-      priority
-      className="h-14 w-auto sm:h-16"
-    />
+    <span className="flex items-center gap-2 sm:gap-3">
+      <Image
+        src="/marca-rubix360.webp"
+        alt=""
+        aria-hidden
+        width={256}
+        height={256}
+        priority
+        className="h-10 w-auto sm:h-12"
+      />
+      <span className="font-display leading-none tracking-[-0.03em] text-[20px] sm:text-[29px] text-[var(--ink-strong)] max-[389px]:hidden">
+        Rubix<span style={{ color: "var(--cobalt)" }}>360</span>
+      </span>
+    </span>
   );
 }
