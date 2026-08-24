@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function FinalCTA() {
@@ -15,6 +16,22 @@ export function FinalCTA() {
             background: "linear-gradient(115deg, var(--cobalt-deep) 0%, var(--cobalt) 45%, var(--cyan) 100%)",
           }}
         />
+        {/* Modular-glass plate over the sweep. Screen blend means the dark
+            centre leaves the gradient untouched while the lit cubes at the
+            edges add real depth — the band keeps its cobalt identity and stops
+            reading as a flat CSS fill. Rendered dense at the sides and empty in
+            the middle, so it never competes with the headline. */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[70%] rounded-[36px] mx-6 sm:mx-12 overflow-hidden">
+          <Image
+            src="/cta-textura.webp"
+            alt=""
+            aria-hidden
+            fill
+            sizes="100vw"
+            className="object-cover opacity-55 mix-blend-screen"
+          />
+        </div>
+
         <div
           className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[70%] rounded-[36px] mx-6 sm:mx-12 opacity-50 mix-blend-screen"
           style={{
