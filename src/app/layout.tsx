@@ -77,6 +77,14 @@ export default function RootLayout({
       </head>
       <body className="min-h-full bg-[var(--bg)] text-[var(--ink)]">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+        {/* Razão social em texto estático, fora de qualquer animação: a
+            verificação de empresa da Meta exige o nome legal visível no site, e
+            o HTML dos blocos animados chega com opacity:0 antes do JS. */}
+        <div className="bg-[var(--ink-strong)] text-white">
+          <p className="shell py-2 text-center text-[12px] sm:text-[13px] font-medium tracking-[0.04em]">
+            {LEGAL_NAME}
+          </p>
+        </div>
         <TopNav />
         {children}
         <Footer />

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { LEGAL_NAME } from "@/lib/company";
 
 const FADE_UP = (delay = 0) => ({
   initial: { opacity: 0, y: 14 },
@@ -35,6 +36,12 @@ export function Hero() {
         >
           Software, IA, automação e soluções digitais desenvolvidas <em className="not-italic font-semibold text-[var(--ink)]">junto</em> com a sua empresa para acelerar crescimento, eficiência e inovação.
         </motion.p>
+
+        {/* Estático de propósito (ver layout.tsx): a razão social precisa estar
+            visível no HTML servido, sem depender da animação. */}
+        <p className="mt-6 text-center text-[15px] sm:text-base text-[var(--ink)]">
+          Rubix360 é a marca de <strong className="font-semibold text-[var(--ink-strong)]">{LEGAL_NAME}</strong>
+        </p>
 
         <motion.div {...FADE_UP(0.26)} className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a href="#servicos" className="btn btn-primary">
