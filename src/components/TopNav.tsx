@@ -5,13 +5,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "#abordagem", label: "Abordagem" },
-  { href: "#processo",  label: "Como trabalhamos" },
-  { href: "#modular",   label: "Modular" },
-  { href: "#servicos",  label: "Serviços" },
-  { href: "#industrias", label: "Indústrias" },
-  { href: "#solucoes",  label: "Soluções" },
-  { href: "#produtos",  label: "Produtos 360" },
+  { href: "/#abordagem", label: "Abordagem" },
+  { href: "/#processo",  label: "Como trabalhamos" },
+  { href: "/#modular",   label: "Modular" },
+  { href: "/#servicos",  label: "Serviços" },
+  { href: "/#industrias", label: "Indústrias" },
+  { href: "/#solucoes",  label: "Soluções" },
+  { href: "/#produtos",  label: "Produtos 360" },
 ];
 
 export function TopNav() {
@@ -27,7 +27,7 @@ export function TopNav() {
     <header className={`sticky top-0 z-40 transition-shadow ${scrolled ? "glass shadow-[0_1px_0_var(--hairline)]" : ""}`}>
       <div className="shell flex items-center justify-between h-20 sm:h-24">
         <motion.a
-          href="#top"
+          href="/"
           aria-label="Rubix360 — início"
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export function TopNav() {
         </nav>
 
         <motion.a
-          href="#contato"
+          href="/#contato"
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.4 }}

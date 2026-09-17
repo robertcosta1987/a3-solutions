@@ -4,6 +4,7 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TopNav } from "@/components/TopNav";
 import { Footer } from "@/components/Footer";
+import { LEGAL_NAME } from "@/lib/company";
 
 // Mono cut only — display + body come from Fontshare CDN (Cabinet Grotesk +
 // Satoshi). Loading Geist's sans cut would pull us into the same "Vercel
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: BRAND, url: SITE_URL, logo: `${SITE_URL}/apple-icon`, description: DESCRIPTION },
+    { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: BRAND, legalName: LEGAL_NAME, url: SITE_URL, logo: `${SITE_URL}/apple-icon`, description: DESCRIPTION },
     { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: BRAND, url: SITE_URL, description: DESCRIPTION, inLanguage: "pt-BR", publisher: { "@id": `${SITE_URL}/#organization` } },
     {
       "@type": "Service",

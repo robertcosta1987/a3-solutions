@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { LEGAL_NAME } from "@/lib/company";
+
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -11,14 +14,21 @@ export function Footer() {
         </div>
         <div className="flex flex-col sm:items-end gap-3 text-sm text-[var(--ink-muted)]">
           <div className="flex flex-wrap gap-x-5 gap-y-2 sm:justify-end">
-            <a href="#processo" className="hover:text-[var(--ink)] transition-colors">Como trabalhamos</a>
-            <a href="#modular"  className="hover:text-[var(--ink)] transition-colors">Modular</a>
-            <a href="#servicos" className="hover:text-[var(--ink)] transition-colors">Serviços</a>
-            <a href="#solucoes" className="hover:text-[var(--ink)] transition-colors">Soluções</a>
-            <a href="#contato"  className="hover:text-[var(--ink)] transition-colors">Contato</a>
+            <Link href="/#processo" className="hover:text-[var(--ink)] transition-colors">Como trabalhamos</Link>
+            <Link href="/#modular" className="hover:text-[var(--ink)] transition-colors">Modular</Link>
+            <Link href="/#servicos" className="hover:text-[var(--ink)] transition-colors">Serviços</Link>
+            <Link href="/#solucoes" className="hover:text-[var(--ink)] transition-colors">Soluções</Link>
+            <Link href="/#contato" className="hover:text-[var(--ink)] transition-colors">Contato</Link>
           </div>
           <div className="mono text-[11px] tracking-[0.16em] text-[var(--ink-faint)] uppercase">
             © {year} Rubix360 — feito no Brasil
+          </div>
+          <div className="text-[12px] text-[var(--ink-faint)] sm:text-right">
+            {LEGAL_NAME}
+          </div>
+          <div className="flex gap-x-5 text-[12px] sm:justify-end">
+            <Link href="/termos" className="hover:text-[var(--ink)] transition-colors">Termos de Uso</Link>
+            <Link href="/privacidade" className="hover:text-[var(--ink)] transition-colors">Política de Privacidade</Link>
           </div>
         </div>
       </div>
